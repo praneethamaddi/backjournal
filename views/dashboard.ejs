@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Style */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa; /* Soft off-white background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Header Style */
+        h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        /* Button Styles */
+        button {
+            padding: 15px 30px;
+            background-color: #2ecc71; /* Green button */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #27ae60; /* Darker green on hover */
+            transform: translateY(-3px); /* Slight lift effect */
+        }
+
+        button:active {
+            background-color: #1f7a43; /* Even darker green on click */
+            transform: translateY(1px); /* Slight press effect */
+        }
+
+        /* Logout Button Style */
+        .logout-btn {
+            background-color: #e74c3c; /* Red logout button */
+        }
+
+        .logout-btn:hover {
+            background-color: #c0392b; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to Your Dashboard</h2>
+
+    <button onclick="window.location.href='/tasks'">Go to Tasks</button>
+    <button onclick="window.location.href='/notes'">Go to Notes</button>
+    <button onclick="window.location.href='/logout'" class="logout-btn">Logout</button>
+</body>
+</html>

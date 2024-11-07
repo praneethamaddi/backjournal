@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body style */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Centered Login Card */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .login-card {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+        }
+
+        /* Title Style */
+        .login-title {
+            font-size: 28px;
+            color: #0277bd; /* Blue shade */
+            margin-bottom: 20px;
+        }
+
+        /* Error Message */
+        .error-message {
+            color: #d32f2f; /* Red color for errors */
+            margin-bottom: 15px;
+        }
+
+        /* Form Inputs */
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333;
+            margin-top: 5px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #0277bd; /* Blue color on focus */
+        }
+
+        /* Submit Button */
+        .login-button {
+            width: 100%;
+            padding: 14px;
+            background-color: #0277bd;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #01579b; /* Darker blue on hover */
+        }
+
+        /* Create Account Link */
+        .create-account-link {
+            margin-top: 20px;
+            display: block;
+            font-size: 14px;
+            color: #0277bd;
+            text-decoration: none;
+        }
+
+        .create-account-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h2 class="login-title">Log In</h2>
+            <% if (error) { %>
+                <p class="error-message"><%= error %></p>
+            <% } %>
+            <form action="/login" method="POST">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    />
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    />
+                </div>
+                <button type="submit" class="login-button">Log In</button>
+            </form>
+            <!-- Link to sign up page -->
+            <p class="create-account-link">
+                Don't have an account? <a href="/signup">Create an Account</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
